@@ -6,7 +6,6 @@ import org.eclipse.jgit.lib.*;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.SQLException;
 
 public class GitSqlRepository extends Repository {
     private final Connection connection;

@@ -5,7 +5,6 @@ import org.eclipse.jgit.lib.*;
 import org.eclipse.jgit.revwalk.RevCommit;
 import org.eclipse.jgit.revwalk.RevTree;
 import org.eclipse.jgit.treewalk.TreeWalk;
-import run.fork.git.flex.sqldb.GitSqlRepository;
 
 import java.io.File;
 import java.sql.Connection;
@@ -18,7 +17,10 @@ public class ImportMain {
     public static void main(String[] args) throws Exception {
         if (args.length != 3) {
             System.err.println("Usage: git-sql-import <url> <username> <password>");
+            System.exit(1);
         }
+
+        System.out.println("Using connection " + args[0]);
 
         Connection connection = DriverManager.getConnection(
                 args[0],
